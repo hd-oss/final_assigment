@@ -1,6 +1,7 @@
 part of 'deret_bloc.dart';
 
-@immutable
-abstract class DeretState {}
-
-class DeretInitial extends DeretState {}
+@freezed
+class DeretState with _$DeretState {
+  const factory DeretState.initial() = DeretInitialState;
+  const factory DeretState.result(String result) = DeretResultState;
+}
